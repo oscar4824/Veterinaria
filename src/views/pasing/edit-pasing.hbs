@@ -1,0 +1,61 @@
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{text}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/each}}
+<div class="col-md-12 mx-auto">
+  <div class="card">
+    <div class="card-header">
+      <h3>Editar Pago</h3>
+      <p>Para Abrir la Barra buscadora y buscar la pieza especifia presional Ctrl + f</p>
+      <h4>Datos</h4>
+    </div>
+    <div class="card-body">
+      <form action="/pasings/edit-pasing/{{pago._id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+          <input type="text" name="nombre" class="form-control" value="{{pago.nombre}}" readonly />
+        </div>
+        <div class="form-group">
+          {{#each infopiezaprice}}
+          <input type="text" name="nombrePieza" class="form-control" value="{{nombrePieza}}" readonly />
+          <input type="number" name="precioPieza" class="form-control" value="{{precioPieza}}" readonly />
+          <input type="number" name="cantPieza" class="form-control" value="{{cantPieza}}"
+            placeholder="Numero de piezas" />
+          {{/each}}
+          {{!-- {{#each pago.nombrePieza}}
+          <input type="text" name="nombrePieza" class="form-control" value="{{this}}" readonly />
+          <input type="number" name="precioPieza" class="form-control" value="{{../infopiezaprice.precioPieza}}" readonly />
+          <input type="number" name="cantPieza" class="form-control" value="{{cantPieza}}"
+            placeholder="Numero de piezas" />
+          {{/each}} --}}
+        </div>
+
+        {{!-- <div class="form-group">
+          <input type="number" name="precioPieza" class="form-control" />
+        </div>
+        <div class="form-group">
+          <input type="number" name="cantPieza" class="form-control" />
+        </div> --}}
+        <div class="form-group">
+          <h4>Asistencia</h4>
+          <input type="radio" name="asistencia" value="Asistio" required> Asistio
+          <input type="radio" name="asistencia" value="No Asistio" required> Falto
+        </div>
+        <div class="form-group">
+          <h4>Fecha</h4>
+          <input type="datetime-local" name="fecha" class="form-control" value="{{pago.fecha}}" />
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

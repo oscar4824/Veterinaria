@@ -1,0 +1,57 @@
+<nav class="navbar sticky-top navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Inicio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/about">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">Doctores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pasings">Agendar Cita</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pasings">Ubicaciones</a>
+          </li>
+          {{!-- <li class="nav-item">
+            <a class="nav-link" href="/notes">Agregar nota Rapida</a>
+          </li> --}}
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        {{#if user}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Opciones 
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {{!-- <a class="dropdown-item" href="/notes">Todas las Notas</a>
+              <a class="dropdown-item" href="/notes/add">Añadir Nota</a> --}}
+              <a class="dropdown-item" href="/empleados">Todos los Empleados</a>
+              <a class="dropdown-item" href="/empleado/add">Añadir Empleado</a>
+              <a class="dropdown-item" href="/pvaciadors">Todas las Piezas Vaciador</a>
+              <a class="dropdown-item" href="/pvaciador/add">Añadir Pieza Vaciador</a>
+              <a class="dropdown-item" href="/prellenadors">Todas las Piezas Rellenador</a>
+              <a class="dropdown-item" href="/prellenador/add">Añadir Pieza Rellenador</a>
+              <a class="dropdown-item" href="/ptrazadors">Todas las Piezas Trazador</a>
+              <a class="dropdown-item" href="/ptrazador/add">Añadir Pieza Trazador</a>
+              <a class="dropdown-item" href="/prelles">Todas las Piezas Pulidor</a>
+              <a class="dropdown-item" href="/prelle/add">Añadir Pieza Pulidor</a>
+              <div class="dropdown-divider"></div>
+              <h5 class="dropdown-item" href="/users/logout">Cerrar Sesión</h5>
+            </div>
+          </li>
+
+        {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/users/signin">Ingresar</a>
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>

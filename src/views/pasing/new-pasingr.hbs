@@ -1,0 +1,198 @@
+<div class="col-md-12 mx-auto">
+  <div class="card text-center">
+    <div class="card-header">
+      <h3>Nueva Asignación Diaria Pulidores</h3>
+    </div>
+    <div class="card-body">
+      <p>Para Abrir la Barra buscadora y buscar la pieza especifia presionar Ctrl + f</p>
+      <form action="/pasing/new-pasing" method="POST">
+        <div class="container">
+          <div class="form-group" style="padding: 1%;">
+            <h5>Nombre del Empleado</h5>
+            <input type="text" name="nombre" class="form-control" value="{{infoempleado.nombre}}"
+              placeholder="Nombre del Empleado" readonly />
+          </div>
+          <div class="form-group" style="padding: 1%;">
+            <h5>Tipo del Empleado</h5>
+            <input type="text" name="tipoEmpleado" class="form-control" value="{{infoempleado.tipoEmpleado}}"
+              placeholder="Tipo de Empleado" readonly />
+          </div>
+          <div class="form-group" style="padding: 1%;">
+            <h5>Fecha de Asignación</h5>
+            <input type="datetime-local" name="fecha" class="form-control" placeholder="Fecha"></input>
+          </div>
+          <div class="form-group" style="padding: 1%;">
+            <h5>Asistencia</h5>
+            <input type="radio" name="asistencia" value="Asistio" required> Asistio
+            <input type="radio" name="asistencia" value="Falto" required> No Asistio
+          </div>
+          <div class="row align-items-start">
+            <h5>Catalogo de Piezas</h5>
+            <div class="col-3">
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne" aria-expanded="true"
+                      aria-controls="collapseOne">
+                      Animales
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <div class="form-group" style="width: 100%;">
+                        {{#each infopiezasanimales}}
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="nombrePieza"
+                            value="{{nombrePieza}}" id="defaultCheck{{@index}}_animales" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop{{@index}}_animales" onchange="generarInputs(this, document.getElementById('precio{{@index}}_animales'))">
+                          <label class="form-check-label" for="defaultCheck{{@index}}_animales">{{nombrePieza}}</label>
+                          <label class="form-check-label" for="defaultCheck{{@index}}_animales" id="precio{{@index}}_animales">{{formatDecimal precioPieza}}</label>
+                        </div>
+                        {{/each}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingdos">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapsedos" aria-expanded="true"
+                      aria-controls="collapsedos">
+                      Macetas
+                    </button>
+                  </h2>
+                  <div id="collapsedos" class="accordion-collapse collapse show" aria-labelledby="headingdos"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <div class="form-group" style="width: 100%;">
+                        {{#each infopiezasmacetas}}
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="nombrePieza"
+                            value="{{nombrePieza}}" id="defaultCheck{{@index}}_macetas" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop{{@index}}_macetas" onchange="generarInputs(this, document.getElementById('precio{{@index}}_macetas'))">
+                          <label class="form-check-label" for="defaultCheck{{@index}}_macetas">{{nombrePieza}}</label>
+                          <label class="form-check-label" for="defaultCheck{{@index}}_macetas" id="precio{{@index}}_macetas">{{formatDecimal precioPieza}}</label>
+                        </div>
+                        {{/each}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingtres">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapsetres" aria-expanded="true"
+                      aria-controls="collapsetres">
+                      Articulos Decorativos
+                    </button>
+                  </h2>
+                  <div id="collapsetres" class="accordion-collapse collapse show" aria-labelledby="headingtres"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <div class="form-group" style="width: 100%;">
+                        {{#each infopiezasdeco}}
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="nombrePieza"
+                            value="{{nombrePieza}}" id="defaultCheck{{@index}}_decorativos" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop{{@index}}_decorativos" onchange="generarInputs(this, document.getElementById('precio{{@index}}_decorativos'))">
+                          <label class="form-check-label" for="defaultCheck{{@index}}_decorativos">{{nombrePieza}}</label>
+                          <label class="form-check-label" for="defaultCheck{{@index}}_decorativos" id="precio{{@index}}_decorativos">{{formatDecimal precioPieza}}</label>
+                        </div>
+                        {{/each}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingcuatro">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapsecuatro" aria-expanded="true"
+                      aria-controls="collapsecuatro">
+                      Cocina
+                    </button>
+                  </h2>
+                  <div id="collapsecuatro" class="accordion-collapse collapse show" aria-labelledby="headingcuatro"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <div class="form-group" style="width: 100%;">
+                        {{#each infopiezascocina}}
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" name="nombrePieza"
+                            value="{{nombrePieza}}" id="defaultCheck{{@index}}_otros" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop{{@index}}_otros" onchange="generarInputs(this, document.getElementById('precio{{@index}}_otros'))">
+                          <label class="form-check-label" for="defaultCheck{{@index}}_otros">{{nombrePieza}}</label>
+                          <label class="form-check-label" for="defaultCheck{{@index}}_otros" id="precio{{@index}}_otros">{{formatDecimal precioPieza}}</label>
+                        </div>
+                        {{/each}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" id="inputs" style="padding: 1%;">
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function generarInputs(checkbox, precio) {
+
+    var container = document.getElementById("inputsContainer");
+    if (!container) {
+      container = document.createElement("div");
+      container.id = "inputsContainer";
+      document.querySelector(".row.align-items-start").appendChild(container);
+    }
+
+    if (checkbox.checked) {
+      var nombrePiezaParagraph = document.createElement("p");
+      nombrePiezaParagraph.textContent = checkbox.value;
+      nombrePiezaParagraph.classList.add("h4"); // Agregar la clase "h4" de Bootstrap
+      container.appendChild(nombrePiezaParagraph);
+      
+
+      var cantPiezaInput = document.createElement("input");
+      cantPiezaInput.type = "text";
+      cantPiezaInput.name = "cantPieza";
+      cantPiezaInput.placeholder = "Cantidad de Piezas";
+      cantPiezaInput.classList.add("form-control");
+      container.appendChild(cantPiezaInput);
+
+      var precioPiezaInput = document.createElement("input");
+      precioPiezaInput.type = "text";
+      precioPiezaInput.name = "precioPieza";
+      precioPiezaInput.placeholder = "Precio de Piezas";
+      precioPiezaInput.value = precio.textContent;
+      precioPiezaInput.classList.add("form-control");
+      precioPiezaInput.style.marginBottom = "5%";
+      precioPiezaInput.readOnly = true;
+      container.appendChild(precioPiezaInput);
+    } else {
+      // Eliminar los inputs si la checkbox se desmarca
+      while (container.firstChild) {
+        container.removeChild(container.firstChild);
+      }
+    }
+  }
+</script>

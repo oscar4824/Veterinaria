@@ -1,0 +1,28 @@
+<div class="row">
+  {{#each rpieza}}
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title d-flex justify-content-between align-items-center">
+          {{nombrePieza}} <a href="/prelle/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+        </h4>
+        <p>Pago de la Pieza: ${{formatDecimal precioPieza}}</p>
+        <p>Pieza para: {{tipo}}</p>
+        <!-- DELETE REQUEST -->
+        <form action="/prelle/delete/{{_id}}?_method=DELETE" method="POST" style="padding: 5%;">
+          <input type="hidden" name="_method" value="DELETE">
+          <button type="submit" class="btn btn-danger btn-block btn-sm">Eliminar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <div class="card mx-auto">
+    <div class="card-body">
+      <h1>Hola{{user.name}}</h1>
+      <p clsss="lead">No hay Piezas aun</p>
+      <a href="/prelle/add" class="btn btn-success btn-block">Crear Pieza</a>
+    </div>
+  </div>
+  {{/each}}
+</div>

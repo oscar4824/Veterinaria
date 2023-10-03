@@ -1,0 +1,49 @@
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{text}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/each}}
+
+<div class="col-md-4 mx-auto">
+  <div class="card">
+    <div class="card-header">
+      <h3>Editar Pieza de {{rpieza.tipo}}</h3>
+    </div>
+    <div class="card-body">
+      <form action="/prellenadors/edit-prellenador/{{rpieza._id}}?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="form-group" style="padding: 3%;">
+          <input type="text" name="nombrePieza" class="form-control" value="{{rpieza.nombrePieza}}"/>
+        </div>
+        <div class="form-group" style="padding: 3%;">
+          <input type="number" name="precioPieza" class="form-control" value="{{rpieza.precioPieza}}"/>
+        </div>
+        <div class="form-group" style="padding: 3%;">
+        <select name="tipo" class="form-select" id="inputGroupSelect01">
+            <option selected>{{rpieza.tipo}}</option>
+            <option value="Pulidor"> Pulidor </option>
+          </select>
+          {{!-- <input type="text" name="tipoEmpleado" class="form-control">{{empleado.tipoEmpleado}}</input> --}}
+        </div>
+        <div class="form-group" style="padding: 3%;">
+        <select name="categoria" class="form-select" id="inputGroupSelect01">
+            <option selected>Selecciona una Categoria </option>
+            <option value="Animales"> Animales </option>
+            <option value="Macetas"> Macetas </option>
+            <option value="ArtDeco"> Articulos Decorativos </option>
+            <option value="ServCocina"> Servicio Cocina </option>
+
+          </select>
+        </div>
+        <div class="form-group" style="padding: 3%;">
+          <button class="btn btn-primary btn-block" type="submit">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="col-md-4 mx-auto">
+  <div class="card text-center">
+    <div class="card-header">
+      <h3>Nueva Pieza Para Rellenador</h3>
+    </div>
+    <div class="card-body">
+      <form action="/prellenador/new-prellenador" method="POST">
+        <div class="form-group" style="padding: 3%;">
+          <input type="text" name="nombrePieza" class="form-control" placeholder="Nombre de la Pieza" autofocus />
+        </div>
+        <div class="form-group" style="padding: 3%;">
+          <input type="number" name="precioPieza" class="form-control" placeholder="Pago de la Pieza"></input>
+        </div>
+        <div class="form-group" style="padding: 3%;">
+        <select name="tipo" class="form-select" id="inputGroupSelect01">
+            <option selected>Selecciona un Tipo </option>
+            <option value="Rellenador"> Rellenador </option>
+          </select>
+        </div>
+        <div class="form-group" style="padding: 3%;">
+        <select name="categoria" class="form-select" id="inputGroupSelect01">
+            <option selected>Selecciona una Categoria </option>
+            <option value="Animales"> Animales </option>
+            <option value="Macetas"> Macetas </option>
+            <option value="ArtDeco"> Articulos Decorativos </option>
+            <option value="ServCocina"> Servicio Cocina </option>
+
+          </select>
+        </div>
+        <div class="form-group" style="padding: 3%;">
+          <button class="btn btn-primary btn-block" type="submit">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
