@@ -5,9 +5,9 @@ config();
 const configurations = {
   PORT: process.env.PORT || 4000,
   MONGODB_HOST: process.env.MONGODB_HOST || "127.0.0.1",
-  MONGODB_DATABASE: process.env.MONGODB_DB || "administracion-app",
+  MONGODB_DATABASE: process.env.MONGODB_DB || "veterinaria-app",
   MONGODB_URI: `mongodb://${process.env.MONGODB_HOST || "127.0.0.1"}/${
-    process.env.MONGODB_DATABASE || "administracion-app"
+    process.env.MONGODB_DATABASE || "veterinaria-app"
   }`,
 };
 // PORT: process.env.PORT || 4000,

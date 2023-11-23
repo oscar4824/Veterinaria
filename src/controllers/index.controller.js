@@ -9,7 +9,7 @@ export const renderIndex = (req, res) => {
 };
 
 export const renderAbout = async (req, res) => {
-  const prelle = await Crelle.find({tipo: "Pulidor"}).lean();
+  const prelle = await Crelle.find({tipo: "Medico"}).lean();
   const pvaciador = await Cvaciador.find({tipo: "Vaciador"}).lean()
   const ppulidor = await Crellenador.find({tipo: "Rellenador"}).lean()
   const ptrazador = await Ctrazador.find({tipo: "Trazador"}).lean()
@@ -17,7 +17,7 @@ export const renderAbout = async (req, res) => {
 };
 
 export const renderAdmin = async (req, res) => {
-  const empleador = await Empleado.find({tipoEmpleado: "Pulidor"}).lean()
+  const empleador = await Empleado.find({tipoEmpleado: "Medico"}).lean()
   const empleadov = await Empleado.find({tipoEmpleado: "Vaciador"}).lean()
   const empleadop = await Empleado.find({tipoEmpleado: "Rellenador"}).lean()
   const empleadot = await Empleado.find({tipoEmpleado: "Trazador"}).lean()

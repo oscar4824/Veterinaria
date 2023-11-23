@@ -7,16 +7,16 @@ export const createNewCrelle = async (req, res) => {
   const { nombrePieza, precioPieza, tipo, categoria } = req.body;
   const errors = [];
   if (!nombrePieza) {
-    errors.push({ text: "Porfavor escribe el nombre de la Pieza" });
+    errors.push({ text: "Escribe el Nombre del Tratamiento, Servicio o Articulo" });
   }
   if (!precioPieza) {
-    errors.push({ text: "Porfavor escribe el precio de la Pieza" });
+    errors.push({ text: "Escribe el Costo" });
   }
   if (!tipo) {
-    errors.push({ text: "Porfavor selecciona el tipo de la Pieza" });
+    errors.push({ text: "Selecciona el Tipo (Tratamiento, Servicio o Articulo)" });
   }
   if (!categoria) {
-    errors.push({ text: "Porfavor selecciona la categoria de la Pieza" });
+    errors.push({ text: "Selecciona la Categoria" });
   }
 
   if (errors.length > 0) {

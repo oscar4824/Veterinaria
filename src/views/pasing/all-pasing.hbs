@@ -1,8 +1,9 @@
-<h1 class="display-4">Panel de Asignaciones</h1>
-<p>Para Abrir la Barra buscadora y buscar el nombre del empleado presionar Ctrl + f</p>
-<a href="/pasings/mergePDFs" class="btn btn-warning btn-block btn-sm">Generar Todos los Reportes de los Ultimos 7
-  días</a>
-<h3 style="background-color:yellow">Asignaciones de Trazadores</h3>
+<h1 class="display-5">Panel de Disponibilidad</h1>
+{{!-- <a href="/pasings/mergePDFs" class="btn btn-warning btn-block btn-sm">Generar Todos los Reportes de los Ultimos 7
+  días</a> --}}
+  <br>
+<h3>Disponibilidad de Medicos</h3>
+<br>
 <div class="row">
   {{#each pago3}}
   <div class="col-md-3" style="padding: 1%;">
@@ -36,134 +37,9 @@
   <div class="card mx-auto">
     <div class="card-body">
       <h1>Hola{{user.name}}</h1>
-      <p clsss="lead">No hay Asignaciones aun</p>
+      <p clsss="lead">Los Horarios estan Disponibles</p>
     </div>
   </div>
   {{/each}}
 </div>
-<h3 style="background-color:green">Asignaciones de Rellenadores</h3>
-<div class="row">
-  {{#each pago2}}
-  <div class="col-md-3" style="padding: 1%;">
-    <div class="card" style=" height: 100%; max-height:650px; min-height: 350px;">
-      <div class="card-body">
-        <h4 class="card-title d-flex justify-content-between align-items-center">
-          {{nombre}} <a href="/pasings/editp/{{_id}}"><i class="fas fa-edit"></i></a>
-        </h4>
-        {{!-- <p>Nombre de las piezas realizadas: {{nombrePieza}}</p>
-        <p>Precio de las piezas realizadas: {{precioPieza}}</p>
-        <p>Cantidad de la pieza que realizo: {{cantPieza}}</p> --}}
-        {{#each nombrePieza}}
-        <p>{{this}} - ${{formatDecimal (lookup ../precioPieza @index)}} <br> Cantidad: {{lookup ../cantPieza @index}}</p>
-        {{/each}}
-        <p>Fecha: {{dateFormat fecha month="2-digit" day="2-digit" year="numeric"}}</p>
-        <!-- DELETE REQUEST -->
-        <form action="/pasigns/delete/{{_id}}?_method=DELETE" method="POST" style="padding: 5%;">
-          <input type="hidden" name="_method" value="DELETE">
-          <button type="submit" class="btn btn-danger btn-block btn-sm">Eliminar</button>
-        </form>
-        {{!-- <button type="button" class="btn btn-info btn-block btn-sm" onclick="generatePDF('{{_id}}')">Generar
-          Reporte</button> --}}
-        <div style="padding: 5%;"><a href="/pasings/generatePDF/{{_id}}" class="btn btn-info btn-block btn-sm">Generar
-            Reporte Diario</a></div>
-        <div style="padding: 5%;"><a href="/pasings/fusionPDFs/{{_id}}"
-            class="btn btn-secondary btn-block btn-sm">Fusionar PDF's</a></div>
-      </div>
-    </div>
-  </div>
-  {{else}}
-
-
-  <div class="card mx-auto">
-    <div class="card-body">
-      <h1>Hola{{user.name}}</h1>
-      <p clsss="lead">No hay Asignaciones aun</p>
-    </div>
-  </div>
-  {{/each}}
-</div>
-
-<h3 style="background-color:aqua">Asignaciones de Vaciadores</h3>
-<div class="row">
-  {{#each pago}}
-  <div class="col-md-3" style="padding: 1%;">
-    <div class="card" style=" height: 100%; max-height:650px; min-height: 350px;">
-      <div class="card-body">
-        <h4 class="card-title d-flex justify-content-between align-items-center">
-          {{nombre}} <a href="/pasings/edit/{{_id}}"><i class="fas fa-edit"></i></a>
-        </h4>
-        {{!-- <p>Nombre de las piezas realizadas: {{nombrePieza}}</p>
-        <p>Precio de las piezas realizadas: {{precioPieza}}</p>
-        <p>Cantidad de la pieza que realizo: {{cantPieza}}</p> --}}
-        {{#each nombrePieza}}
-        <p>{{this}} - ${{formatDecimal (lookup ../precioPieza @index)}} <br> Cantidad: {{lookup ../cantPieza @index}}</p>
-        {{/each}}
-        <p>Fecha: {{dateFormat fecha month="2-digit" day="2-digit" year="numeric"}}</p>
-        <!-- DELETE REQUEST -->
-        <form action="/pasigns/delete/{{_id}}?_method=DELETE" method="POST" style="padding: 5%;">
-          <input type="hidden" name="_method" value="DELETE">
-          <button type="submit" class="btn btn-danger btn-block btn-sm">Eliminar</button>
-        </form>
-        {{!-- <button type="button" class="btn btn-info btn-block btn-sm" onclick="generatePDF('{{_id}}')">Generar
-          Reporte</button> --}}
-        <div style="padding: 5%;"><a href="/pasings/generatePDF/{{_id}}" class="btn btn-info btn-block btn-sm">Generar
-            Reporte Diario</a></div>
-        <div style="padding: 5%;"><a href="/pasings/fusionPDFs/{{_id}}"
-            class="btn btn-secondary btn-block btn-sm">Fusionar PDF's</a></div>
-      </div>
-    </div>
-  </div>
-  {{else}}
-  <div class="card mx-auto">
-    <div class="card-body">
-      <h1>Hola{{user.name}}</h1>
-      <p clsss="lead">No hay Asignaciones aun</p>
-    </div>
-  </div>
-  {{/each}}
-</div>
-<h3 style="background-color:red">Asignaciones de Pulidores</h3>
-<div class="row">
-  {{#each pago4}}
-  <div class="col-md-3" style="padding: 1%;">
-    <div class="card" style=" height: 100%; max-height:650px; min-height: 350px;">
-      <div class="card-body">
-        <h4 class="card-title d-flex justify-content-between align-items-center">
-          {{nombre}} <a href="/pasings/editr/{{_id}}"><i class="fas fa-edit"></i></a>
-        </h4>
-        {{!-- <p>Nombre de las piezas: {{nombrePieza}}</p>
-        <p>Precio de las piezas:</p>
-        {{#each precioPieza}}
-        <p>${{formatDecimal this}}</p>
-        {{/each}}
-        <p>Cantidad de la pieza que realizo: {{cantPieza}}</p> --}}
-        {{#each nombrePieza}}
-        <p>{{this}} - ${{formatDecimal (lookup ../precioPieza @index)}} <br> Cantidad: {{lookup ../cantPieza @index}}</p>
-        {{/each}}
-
-
-        {{!-- <p>Asistencia: {{asistencia}}</p> --}}
-        <p>Fecha: {{dateFormat fecha month="2-digit" day="2-digit" year="numeric"}}</p>
-        <!-- DELETE REQUEST -->
-        <form action="/pasigns/delete/{{_id}}?_method=DELETE" method="POST" style="padding: 5%;">
-          <input type="hidden" name="_method" value="DELETE">
-          <button type="submit" class="btn btn-danger btn-block btn-sm">Eliminar</button>
-        </form>
-        {{!-- <button type="button" class="btn btn-info btn-block btn-sm" onclick="generatePDF('{{_id}}')">Generar
-          Reporte</button> --}}
-        <div style="padding: 5%;"><a href="/pasings/generatePDF/{{_id}}" class="btn btn-info btn-block btn-sm">Generar
-            Reporte Diario</a></div>
-        <div style="padding: 5%;"><a href="/pasings/fusionPDFs/{{_id}}"
-            class="btn btn-secondary btn-block btn-sm">Fusionar PDF's</a></div>
-      </div>
-    </div>
-  </div>
-  {{else}}
-  <div class="card mx-auto">
-    <div class="card-body">
-      <h1>Hola{{user.name}}</h1>
-      <p clsss="lead">No hay Asignaciones aun</p>
-    </div>
-  </div>
-  {{/each}}
-</div>
+<br>

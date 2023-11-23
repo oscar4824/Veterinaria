@@ -97,7 +97,7 @@ export const createNewPagosemanal = async (req, res) => {
 
 export const renderPagosSemanals = async (req, res) => {
   const pago2 = await Pagosemanal.find({
-    tipoEmpleado: 'Rellenador'
+    tipoEmpleado: 'Medico'
   }).lean();
   const pago = await Pagosemanal.find({
     tipoEmpleado: 'Vaciador'
