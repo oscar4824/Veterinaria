@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar sticky-top navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <a class="navbar-brand" href="/">Inicio<img src="/img/mascotas.png" class="img-thumbnail" alt="Logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,11 +12,11 @@
           <li class="nav-item ms-2">
             <a class="nav-link" href="/admin">Doctores</a>
           </li>
-          <li class="nav-item ms-2">
+          {{!-- <li class="nav-item ms-2">
             <a class="nav-link" href="/pasings">Agendar Cita</a>
-          </li>
+          </li> --}}
           <li class="nav-item ms-2">
-            <a class="nav-link" href="/pasings">Ubicaciones</a>
+            <a class="nav-link" href="/pasings">Recepciones</a>
           </li>
 
       </ul>
@@ -34,14 +34,14 @@
               <a class="dropdown-item" href="/notes/add">Añadir Nota</a> --}}
               <a class="dropdown-item" href="/empleados">Todos los Empleados</a>
               <a class="dropdown-item" href="/empleado/add">Añadir Empleado</a>
-              <a class="dropdown-item" href="/pvaciadors">Todas las Piezas Vaciador</a>
-              <a class="dropdown-item" href="/pvaciador/add">Añadir Pieza Vaciador (Servicios Especiales)</a>
-              <a class="dropdown-item" href="/prellenadors">Todas las Piezas Rellenador</a>
-              <a class="dropdown-item" href="/prellenador/add">Añadir Pieza Rellenador(Intervenciones)</a>
-              <a class="dropdown-item" href="/ptrazadors">Todas las Piezas Trazador</a>
-              <a class="dropdown-item" href="/ptrazador/add">Añadir Pieza Trazador(Alimento y Cuidado)</a>
-              <a class="dropdown-item" href="/prelles">Todas las Piezas Pulidor</a>
-              <a class="dropdown-item" href="/prelle/add">Añadir Pieza Pulidor(Animales y Adopción)</a>
+              {{!-- <a class="dropdown-item" href="/pvaciadors">Todas las Piezas Vaciador</a> --}}
+              <a class="dropdown-item" href="/pvaciador/add">(Servicios Especiales)</a>
+              {{!-- <a class="dropdown-item" href="/prellenadors">Todas las Piezas Rellenador</a> --}}
+              <a class="dropdown-item" href="/prellenador/add">(Intervenciones)</a>
+              {{!-- <a class="dropdown-item" href="/ptrazadors">Todas las Piezas Trazador</a> --}}
+              <a class="dropdown-item" href="/ptrazador/add">(Alimento y Cuidado)</a>
+              {{!-- <a class="dropdown-item" href="/prelles">Todas las Piezas Pulidor</a> --}}
+              <a class="dropdown-item" href="/prelle/add">(Animales y Adopción)</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/users/logout">Cerrar Sesión</a>
             </div>

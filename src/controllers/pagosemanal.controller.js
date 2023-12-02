@@ -15,7 +15,6 @@ export const renderPagosemanalForm = async (req, res) => {
   const infopiezasmacetas = await Cvaciador.find({categoria: 'Macetas'}).lean();
   const infopiezasdeco = await Cvaciador.find({categoria: 'ArtDeco'}).lean();
   const infopiezascocina = await Cvaciador.find({categoria: 'ServCocina'}).lean();
-
   const rellenadorinfo = await Crellenador.find().lean(); 
   res.render("pasing/new-pasing", { infoempleado, rellenadorinfo, infopiezasanimales, infopiezasmacetas, infopiezasdeco, infopiezascocina, pago });
 };

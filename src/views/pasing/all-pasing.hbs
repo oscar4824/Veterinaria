@@ -5,7 +5,7 @@
 <h3>Disponibilidad de Medicos</h3>
 <br>
 <div class="row">
-  {{#each pago3}}
+  {{#each pago2}}
   <div class="col-md-3" style="padding: 1%;">
     <div class="card" style=" height: 100%; max-height:650px; min-height: 350px;">
       <div class="card-body">
@@ -28,8 +28,8 @@
           Reporte</button> --}}
         <div style="padding: 5%;"><a href="/pasings/generatePDF/{{_id}}" class="btn btn-info btn-block btn-sm">Generar
             Reporte Diario</a></div>
-        <div style="padding: 5%;"><a href="/pasings/fusionPDFs/{{_id}}"
-            class="btn btn-secondary btn-block btn-sm">Fusionar PDF's</a></div>
+        {{!-- <div style="padding: 5%;"><a href="/pasings/fusionPDFs/{{_id}}"
+            class="btn btn-secondary btn-block btn-sm">Fusionar PDF's</a></div> --}}
       </div>
     </div>
   </div>

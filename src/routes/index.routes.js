@@ -6,6 +6,6 @@ const router = Router();
 
 router.get("/", renderIndex);
 router.get("/about", renderAbout);
-router.get("/admin", isAuthenticated, renderAdmin);
+router.get("/admin", renderAdmin);
 
 export default router;
